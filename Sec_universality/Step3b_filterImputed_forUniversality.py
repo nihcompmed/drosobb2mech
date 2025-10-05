@@ -9,11 +9,12 @@ import os, re, pickle
 import numpy as np
 import pandas as pd
 
-ROOT = "universality"
-DATA_DIR = os.path.join("dataset_forallsections")
+ROOT = "Sec_universality"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.join(BASE_DIR, "..", "data")
 
 # Base files used in Step2_trainVAE
-df0_fn = os.path.join(DATA_DIR, "all_ctgxyz_99genes_fillrand_fillzero_t012345_noshuffle_250915.csv")
+df0_fn = os.path.join(DATA_DIR, "all_ctgxyz_99genes_fillrand_fillzero_t012345_noshuffle.csv")
 test_pkl = os.path.join(DATA_DIR, "test_cells.pkl")
 with open(test_pkl, "rb") as f:
     test_idx = pickle.load(f)

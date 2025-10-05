@@ -45,9 +45,11 @@ setinputdim, setoutputdim = Ngenes + 3, Ngenes
 
 
 
-DATA_DIR = os.path.join("dataset_forallsections")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.join(BASE_DIR, "..", "data")
 
-data_fn = os.path.join(DATA_DIR, "all_ctgxyz_99genes_fillrand_fillzero_t012345_90percent_and_shuffled_tellnextg.csv")
+
+data_fn = os.path.join(DATA_DIR, "all_ctgxyz_99genes_fillrand_fillzero_t012345_90percent_and_shuffled.csv")
 mask_fn = os.path.join(DATA_DIR, "mask_99genes_fillrand_fillzero_t012345_90percent_and_shuffled.csv")
 test_pkl = os.path.join(DATA_DIR, "test_cells.pkl")
 
@@ -59,7 +61,7 @@ with open(test_pkl, "rb") as f:
 
 
 # region selection uses t=0 rows from old-style dataset
-df0_fn = os.path.join(DATA_DIR, "all_ctgxyz_99genes_fillrand_fillzero_t012345_noshuffle_250915.csv")
+df0_fn = os.path.join(DATA_DIR, "all_ctgxyz_99genes_fillrand_fillzero_t012345_noshuffle.csv")
 df0 = pd.read_csv(df0_fn, header=None).values
 
 cell_ids_remaining = np.setdiff1d(np.arange(1, ncells + 1), test_idx)

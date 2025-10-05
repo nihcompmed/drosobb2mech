@@ -10,7 +10,7 @@ Pipeline for universality section:
   - Save Hill model parameters CSV
 
 Usage:
-  python universality/Step4b_fitHill99D_VAEonly_forUniversalitySection.py \
+  python Sec_universality/Step4b_fitHill99D_VAEonly_forUniversalitySection.py \
       --job_id 250923001 --l1_lambda 1e-4
 """
 
@@ -39,7 +39,7 @@ def erf_smooth_l1(residual: torch.Tensor, sigma_vec: torch.Tensor) -> torch.Tens
     return (term1 + term2).mean()
 
 def find_imputed_csv(job_id: int) -> Path:
-    root = Path("universality/ImputedOut_universality")
+    root = Path("Sec_universality/ImputedOut_universality")
     pats = list(root.glob(f"Imputed_{job_id}_ldim*_trainonly.csv"))
     if not pats:
         raise FileNotFoundError(f"No filtered imputed CSV for job {job_id} in {root}")
@@ -234,7 +234,7 @@ def main():
     params_csv = trainer.train(
         ds,
         bsize=args.bsize,
-        ckpt_dir="universality/HillModels_trainonly",   # <── new folder
+        ckpt_dir="Sec_universality/HillModels_trainonly",   # <── new folder
         name_prefix=f"Hill_fromVAEonly_sub{args.n_sub}_rk4{args.int_substeps}",
         job_id=save_job_id
     )

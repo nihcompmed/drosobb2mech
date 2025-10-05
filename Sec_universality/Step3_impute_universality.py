@@ -21,7 +21,7 @@ DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # ─────────────────── Files ───────────────────
 DATA_DIR = Path("dataset_forallsections")
-DF0_FN = DATA_DIR / "all_ctgxyz_99genes_fillrand_fillzero_t012345_noshuffle_250915.csv"
+DF0_FN = DATA_DIR / "all_ctgxyz_99genes_fillrand_fillzero_t012345_noshuffle.csv"
 
 SWARM_FILES = [
     Path("Step2_trainVAE_universality01.swarm"),
