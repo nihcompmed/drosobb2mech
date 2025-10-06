@@ -52,3 +52,16 @@ Step 7: run 'Step7_fitHill_Sec_impact_of_teacher.py' to fit the Hill model from 
 
 Step 8: Use 'Step8_integrateHill_zerosmallVij_code2_window.py' to evaluate the Hill model with proper input(we input both the Hill model from teacher or without teacher). Before this, we can use the Step8p1 to Step8p5 files to calibrate for both models first. 
 
+
+
+******** How to run codes in Sec_universality:
+
+Step 1: prepare the data as before.
+
+Step 2: run 'Step2_trainVAE_universality01.swarm' and 'Step2_trainVAE_universality02.swarm' for different VAEs (these VAE all have same structures, but with different pre-imputation method, different data points chosen from different places(a/m/p, or d/m/v, or random 33%), different latent dimension or activation function).
+
+Step 3: use 'Step3_impute_universality.py' to do imputation after training of VAE for each VAE-training job you run.
+
+Step 4: use 'Step4b_fitHill99D_VAEonly_forUniversalitySection' to fit the Hill function.
+
+Step 5: evaluate the error from fit Hill function with 'Step5_evalHill_errors.py'
