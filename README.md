@@ -27,7 +27,11 @@ where ctgxyz means they have col 1 as cellid, col2 as time, col3to101 as g, col1
 
 Step 2: Run the swarm file 'Step2_VAEpenaltyJacdir_withmask_250916.swarm' to train VAEs.
 
-Step 3: Run the swarm file 'step3_impute_250916.swarm' to do the imputation with respect to each of trained VAEs. We can then make the Figure 3 of the manuscript.
+Step 3: Run the swarm file 'step3_impute_250916.swarm' to do the imputation with respect to each of trained VAEs.
+
+Step 4: We can then make the Figure 3 of the manuscript, and do other evaluations.
+
+Step 5: 
 
 
 
