@@ -3,6 +3,14 @@
 """
 Fit Hill model using a VAE-only teacher (no latent ODE).
 Auto-searches VAE checkpoint and imputed CSV from job_id.
+
+Example run:
+python Step7_fitHill99D_VAEonly_autorun.py     --job_id 250916032     --n_sub 3     --int_substeps 5     --bsize 1024     --max_epochs 100     --maxlr 3e-3     --l1_lambda 1e-4
+
+it will display like:
+[info] job_id=250916032
+[info] VAE ckpt: checkpoints/VAE_KO0g_ld9_gelu_sparse0.003_sw1e-08_encdo0.0_decdo0.0_lr3en3_maxep3000_250916032_bestepoch=0243-val_loss=0.00192.ckpt
+[info] Imputed CSV: ImputedOut_250916/Imputed_250916032_valid_ldim9.csv
 """
 
 import os, glob, argparse
