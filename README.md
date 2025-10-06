@@ -20,3 +20,10 @@ Step 7: fit the Hill mechanistic model
 
 Step 8: evaluate based on what we obtained.
 
+Now for each step we show what to do:
+
+Step 1: Open the Step1_organizedata.m with Matlab and run it, it will unzip data and generate needed datasets. (All from the same data, but with different pre-imputation using rand-fill(called fill_rand) and avg-fill and zero-fill. Their names are in the form of 'all_ctgxyz_99genes_fillrand_fillzero_t012345_90percent_and_shuffled_tellnextg.csv'
+where ctgxyz means they have col 1 as cellid, col2 as time, col3to101 as g, col102to104 as xyz spatial of positional bins. first fillrand means pre-imputation; second fillzero means some data slots from original dataset is missing, so we fill by average no matter what pre-imputation we use; 90 percent means we exclude the 10% fixed testing set.
+
+
+
