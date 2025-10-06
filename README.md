@@ -20,6 +20,11 @@ Step 7: fit the Hill mechanistic model
 
 Step 8: evaluate based on what we obtained.
 
+
+Some codes need large csv files that cannot be uploaded. Can contact the author for the details if any question.
+
+
+
 Now for each step we show what to do:
 
 Step 1: Open the Step1_organizedata.m with Matlab and run it, it will unzip data and generate needed datasets. (All from the same data, but with different pre-imputation using rand-fill(called fill_rand) and avg-fill and zero-fill. Their names are in the form of 'all_ctgxyz_99genes_fillrand_fillzero_t012345_90percent_and_shuffled_tellnextg.csv'
