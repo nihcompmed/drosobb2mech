@@ -31,7 +31,9 @@ Step 3: Run the swarm file 'step3_impute_250916.swarm' to do the imputation with
 
 Step 4: We can then make the Figure 3 of the manuscript, and do other evaluations.
 
-Step 5: 
+Step 5: run 'Step5_neuralODE250916.swarm' to train the neural ODE corresponding to trained VAE and its corresponding imputation.
+
+Step 6:
 
 
 
