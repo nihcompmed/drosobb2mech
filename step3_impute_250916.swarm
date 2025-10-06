@@ -1,0 +1,4 @@
+python step3_impute_250916.py --shard 0 --nshards 4 --imputed_dir ImputedOut_250916 --plots_root Plots/imputation250916
+python step3_impute_250916.py --shard 1 --nshards 4 --imputed_dir ImputedOut_250916 --plots_root Plots/imputation250916
+python step3_impute_250916.py --shard 2 --nshards 4 --imputed_dir ImputedOut_250916 --plots_root Plots/imputation250916
+python step3_impute_250916.py --shard 3 --nshards 4 --imputed_dir ImputedOut_250916 --plots_root Plots/imputation250916
