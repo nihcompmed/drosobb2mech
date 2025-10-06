@@ -33,7 +33,11 @@ Step 4: We can then make the Figure 3 of the manuscript, and do other evaluation
 
 Step 5: run 'Step5_neuralODE250916.swarm' to train the neural ODE corresponding to trained VAE and its corresponding imputation.
 
-Step 6:
+Step 6: run 'Step6_integrateBB.py' to get teacher derivatives, this is only needed if using integral form of neural ODE (that is, decoder of trajectory of neural ODE in the latent space). If using pushforward Jac_dec(mu)f(mu), then can skip this step.
+
+Step 7: fit the Hill function. Running ''
+
+Step 8: evaluate after fitting Hill function. This is done in each of Result section.
 
 
 
