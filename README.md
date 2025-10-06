@@ -35,3 +35,20 @@ Step 5:
 
 
 
+
+
+******** How to run codes in Sec_impact_of_teacher:
+The python files have guidance of what to run inside each file, so we do not show every command needed to be run here.
+
+Step 0: make sure the data file all_ctgxyz_27genes_fillrand_fillzero_t012345_noshuffle.csv is in current folder.
+
+Step 0: fit the Hill model not from deep learning but directly from data. Run 'Step0_fitHill_Sec_impact_of_teacher.py' to fit a Hill model.
+
+Step 2: train VAE for this 27D, since all 27 genes are fully observed, no need to pre-impute or do imputation, so no Step3 or 4. Also since we skip training neural ODE for this section only, we can also skip Step 5 and 6 here for a simpler comparison.
+
+To train the VAE, run Step2_trainVAE_Sec_impact_of_teacher.swarm, or run 'Step2_trainVAE_Sec_impact_of_teacher.py' directly with the hyperparameter setting as you like.
+
+Step 7: run 'Step7_fitHill_Sec_impact_of_teacher.py' to fit the Hill model from trained VAE. Need to put the ckpt file of VAE in current folder.
+
+Step 8: Use 'Step8_integrateHill_zerosmallVij_code2_window.py' to evaluate the Hill model with proper input(we input both the Hill model from teacher or without teacher). Before this, we can use the Step8p1 to Step8p5 files to calibrate for both models first. 
+
