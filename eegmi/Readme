@@ -1,0 +1,11 @@
+Step 1: train the VAE by running:
+  python eegmi251212001_universalVAE_30subjects_win9_centeraware.py \
+     --data-dir EEGMI_numpy \
+     --output checkpoints_vae_251210003/vae_universal30_win9_hd512_ld8_beta3e-04_251210003eegmiVAE_universal.pth \
+     --epochs 100 \
+     --batch-size 512 \
+     --device cuda
+
+
+
+Step 2:
