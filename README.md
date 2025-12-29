@@ -1,6 +1,7 @@
 # Foundation Model for Biological Temporal Data Dynamics with Experimental Validation
-Codes and data for the manuscript "Hybrid deep learning–mechanistic modeling of cellular dynamics from a spatiotemporal single-cell atlas"
+Codes and data for the manuscript "Foundation Model for Biological Temporal Data Dynamics with Experimental Validation"
 
+Part 1: the Drosophila dataset and its codes.
 
 We name the files as Step*_****.py or ipynb. In both Method Section and Result Section, we need around 8 steps to go from original data to final Hill mechanistic model:
 
@@ -76,3 +77,13 @@ Step 3: use 'Step3_impute_universality.py' to do imputation after training of VA
 Step 4: use 'Step4b_fitHill99D_VAEonly_forUniversalitySection' to fit the Hill function.
 
 Step 5: evaluate the error from fit Hill function with 'Step5_evalHill_errors.py'
+
+
+
+
+
+Part 2: Air Quality data and code:
+See 'AQ251201004_dropNMHC_nocontrol.ipynb'
+
+
+
