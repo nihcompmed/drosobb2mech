@@ -1,4 +1,8 @@
-Step 0: go to https://physionet.org/content/eegmmidb/1.0.0/S001/#files-panel to download the ZIP file: eeg-motor-movementimagery-dataset-1.0.0.zip.
+Step 0: go to https://physionet.org/content/eegmmidb/1.0.0/S001/#files-panel to download the ZIP file: eeg-motor-movementimagery-dataset-1.0.0.zip. 
+Then use the file 
+  Step0_preprocessingData.ipynb 
+to pre-process and z-scoring the data and save as npy files.
+
 
 
 Step 1: train the VAE by running:
