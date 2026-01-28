@@ -13,6 +13,6 @@ Step 1: train the VAE by running:
      --batch-size 512 \
      --device cuda
 
-
+“For deterministic GPU runs with torch.use_deterministic_algorithms(True) on CUDA ≥ 10.2, set CUBLAS_WORKSPACE_CONFIG=:4096:8 (or :16:8).”
 
 Step 2:
