@@ -39,51 +39,54 @@ Epoch 001 | train=0.151574 | val=0.137962 (recon=0.131127, kl=22.784885) | test=
 
 Step 02: Run the following code
 
-bash -lc 'export CUBLAS_WORKSPACE_CONFIG=:4096:8; export PYTHONHASHSEED=0; export OMP_NUM_THREADS=1; export MKL_NUM_THREADS=1; \
-> python Step02_finetune_efficiency_subject_adaptation.py \
+export CUBLAS_WORKSPACE_CONFIG=:4096:8
+python Step02_finetune_efficiency_subject_adaptation.py \
 >   --data-dir EEGMI_numpy \
 >   --split-json checkpoints_vae_261028001/vae_universal_subjectsplit70_10_29_win9_hd512_ld8_beta3e-04_split123_sample123_torch123.split.json \
 >   --pretrained-ckpt checkpoints_vae_261028001/vae_universal_subjectsplit70_10_29_win9_hd512_ld8_beta3e-04_split123_sample123_torch123.pth \
->   --outdir Step02_outputs/finetune_efficiency_epochbudget_cleanfix_ep3_R03to14 \
+>   --outdir Step02_outputs/finetune_efficiency_epochbudget_cleanfix_ep3_R03to14_CRMsplit \
 >   --which-split test \
 >   --runs 3-14 \
 >   --k-list 500 2000 10000 \
 >   --epochs 3.0 \
 >   --eval-epochs 0 0.1 0.2 0.5 1 2 3 \
->   --n-test 20000 \
+>   --n-test 2000 \
 >   --downsample-factor 30 \
 >   --sample-seed 999 \
 >   --subject-split-seed 2026 \
 >   --torch-seed 2026 \
 >   --batch-size 512 --lr 1e-3 \
 >   --beta 3e-4 \
->   --device cuda'
+>   --device cuda
 
-if it succeeds, it should be like
+
 [Device] cuda
 [Subjects] n=29 from split=test
 [Runs] 3-14
 [Hyperparams from ckpt] beta=0.0003 delta=1.0 center_w=5.0
 [Epoch budget] epochs=3.0 | eval_epochs=[0.0, 0.1, 0.2, 0.5, 1.0, 2.0, 3.0]
 [k-list] [500, 2000, 10000]
+[Split policy] FIXED test per subject + NESTED train across k
 
 === Subject S062 ===
 [Data] runs=3-14 windows=7872
-[Split k_req=500 (k_used=500)] train=500 test=7372 (seed=2088)
-[k_req=500 k_used=500] recon e0=0.075553 -> e3=0.073742 | saved Step02_metrics_subject=S062_kreq=500_seedSplit=2088_seedTorch=2026.json
-[Split k_req=2000 (k_used=2000)] train=2000 test=5872 (seed=2088)
-[k_req=2000 k_used=2000] recon e0=0.074893 -> e3=0.070814 | saved Step02_metrics_subject=S062_kreq=2000_seedSplit=2088_seedTorch=2026.json
-[Split k_req=10000 (k_used=5872)] train=5872 test=2000 (seed=2088)
-[k_req=10000 k_used=5872] recon e0=0.075169 -> e3=0.068215 | saved Step02_metrics_subject=S062_kreq=10000_seedSplit=2088_seedTorch=2026.json
+[Split] seed=2088 | n_test_used=2000 | train_pool=5872 | test_digest=6ff0fb73715f
+[Split k_req=500 (k_used=500)] train=500 test=2000 (same test for all k)
+[k_req=500 k_used=500] recon e0=0.077830 -> e3=0.075503 | saved Step02_metrics_subject=S062_kreq=500_seedSplit=2088_seedTorch=2026.json
+[Split k_req=2000 (k_used=2000)] train=2000 test=2000 (same test for all k)
+[k_req=2000 k_used=2000] recon e0=0.077830 -> e3=0.072373 | saved Step02_metrics_subject=S062_kreq=2000_seedSplit=2088_seedTorch=2026.json
+[Split k_req=10000 (k_used=5872)] train=5872 test=2000 (same test for all k)
+[k_req=10000 k_used=5872] recon e0=0.077830 -> e3=0.069178 | saved Step02_metrics_subject=S062_kreq=10000_seedSplit=2088_seedTorch=2026.json
 
 === Subject S107 ===
 [Data] runs=3-14 windows=7992
-[Split k_req=500 (k_used=500)] train=500 test=7492 (seed=2133)
-[k_req=500 k_used=500] recon e0=0.127401 -> e3=0.125502 | saved Step02_metrics_subject=S107_kreq=500_seedSplit=2133_seedTorch=2026.json
-[Split k_req=2000 (k_used=2000)] train=2000 test=5992 (seed=2133)
-[k_req=2000 k_used=2000] recon e0=0.126888 -> e3=0.120950 | saved Step02_metrics_subject=S107_kreq=2000_seedSplit=2133_seedTorch=2026.json
-[Split k_req=10000 (k_used=5992)] train=5992 test=2000 (seed=2133)
-[k_req=10000 k_used=5992] recon e0=0.124601 -> e3=0.114198 | saved Step02_metrics_subject=S107_kreq=10000_seedSplit=2133_seedTorch=2026.json
+[Split] seed=2133 | n_test_used=2000 | train_pool=5992 | test_digest=b060c15c392c
+[Split k_req=500 (k_used=500)] train=500 test=2000 (same test for all k)
+[k_req=500 k_used=500] recon e0=0.128575 -> e3=0.126216 | saved Step02_metrics_subject=S107_kreq=500_seedSplit=2133_seedTorch=2026.json
+[Split k_req=2000 (k_used=2000)] train=2000 test=2000 (same test for all k)
+[k_req=2000 k_used=2000] recon e0=0.128575 -> e3=0.122159 | saved Step02_metrics_subject=S107_kreq=2000_seedSplit=2133_seedTorch=2026.json
+[Split k_req=10000 (k_used=5992)] train=5992 test=2000 (same test for all k)
+[k_req=10000 k_used=5992] recon e0=0.128575 -> e3=0.117681 | saved Step02_metrics_subject=S107_kreq=10000_seedSplit=2133_seedTorch=2026.json
 
 
 
