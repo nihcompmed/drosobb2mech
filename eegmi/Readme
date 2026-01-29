@@ -5,6 +5,37 @@ to pre-process and z-scoring the data and save as npy files.
 
 
 
+Step 1: train the pretrain universal VAE by running:
+
+bash -lc 'export CUBLAS_WORKSPACE_CONFIG=:4096:8; export PYTHONHASHSEED=0; export OMP_NUM_THREADS=1; export MKL_NUM_THREADS=1; \
+> python Step01_universalVAE_subjsplit70_10_29_win9_R03to14_centeraware.py \
+>   --data-dir EEGMI_numpy \
+>   --output checkpoints_vae_261028001/vae_universal_subjsplit70_10_29_win9_R03to14_hd512_ld8_beta3e-04_split123_sample123_torch123_ep100.pth \
+>   --train-n 70 --val-n 10 --test-n 29 \
+>   --split-seed 123 --sample-seed 123 --torch-seed 123 \
+>   --window-points 9 --stride-points 1 \
+>   --downsample-factor-train 30 --downsample-factor-eval 30 \
+>   --hidden-dim 512 --latent-dim 8 \
+>   --beta 3e-4 --huber-delta 1.0 --center-weight 5.0 \
+>   --epochs 100 --batch-size 512 --lr 1e-3 \
+>   --device cuda'
+
+If it succeeds in running, it should be like:
+[Device] cuda
+[Subjects] total=109
+[Split] train: ['S086', 'S088', 'S089', 'S043', 'S063', 'S032', 'S014', 'S057', 'S039', 'S009', 'S006', 'S001', 'S075', 'S066', 'S005', 'S064', 'S090', 'S029', 'S042', 'S071', 'S082', 'S034', 'S030', 'S106', 'S054', 'S024', 'S010', 'S055', 'S025', 'S020', 'S100', 'S036', 'S092', 'S073', 'S022', 'S051', 'S096', 'S101', 'S102', 'S072', 'S080', 'S105', 'S083', 'S013', 'S021', 'S095', 'S038', 'S044', 'S002', 'S108', 'S012', 'S094', 'S061', 'S015', 'S060', 'S017', 'S027', 'S052', 'S046', 'S007', 'S078', 'S031', 'S045', 'S091', 'S077', 'S016', 'S019', 'S023', 'S011', 'S059']
+[Split] val  : ['S076', 'S065', 'S070', 'S004', 'S041', 'S035', 'S028', 'S053', 'S008', 'S049']
+[Split] test : ['S062', 'S107', 'S109', 'S040', 'S085', 'S003', 'S068', 'S056', 'S050', 'S069', 'S081', 'S037', 'S079', 'S104', 'S026', 'S047', 'S033', 'S074', 'S048', 'S097', 'S098', 'S087', 'S058', 'S084', 'S018', 'S103', 'S099', 'S093', 'S067']
+[Saved] subject split -> checkpoints_vae_261028001/vae_universal_subjsplit70_10_29_win9_R03to14_hd512_ld8_beta3e-04_split123_sample123_torch123_ep100.split.json
+[Data] Collect TRAIN windows...
+[Data] Collect VAL windows...
+[Data] Collect TEST windows...
+[Data] train_windows=548360 val_windows=78980 test_windows=228687
+Epoch 001 | train=0.151574 | val=0.137962 (recon=0.131127, kl=22.784885) | test=0.162529
+  [Best] val=0.137962 @ epoch=1 | saved -> checkpoints_vae_261028001/vae_universal_subjsplit70_10_29_win9_R03to14_hd512_ld8_beta3e-04_split123_sample123_torch123_ep100.pth
+
+
+
 Step 1: train the VAE by running:
   python eegmi251212001_universalVAE_30subjects_win9_centeraware.py \
      --data-dir EEGMI_numpy \
