@@ -83,6 +83,9 @@ Step 5: evaluate the error from fit Hill function with 'Step5_evalHill_errors.py
 
 
 Part 2: Air Quality data and code:
+For figure 2 of comparing prediction MSE between our trained black-box dynamics and VAR and VARX and SARIMAX, just go to Plot_Figure2.ipynb and run all cells. It involve fitting and forecasting of SARIMAX which could take up to 5 minutes waiting. Then at last it will replot the Figure 2 and show the comparison.
+
+For other codes on air quality,
 See 'AQ251201004_dropNMHC_nocontrol.ipynb'
 
 
