@@ -2,7 +2,7 @@ Step 0: go to https://physionet.org/content/eegmmidb/1.0.0/S001/#files-panel to 
 Then use the file 
   Step0_preprocessingData.ipynb 
 to pre-process and z-scoring the data and save as npy files.
-
+Save them into the folder /EEGMI_numpy under this folder. If successful, it should have 109 folders with names from S001 to S109, and each of these 109 folders with name S*** shall have S***R01.npy up to S***R14.npy.
 
 
 Step 1: train the pretrain universal VAE by running:
@@ -126,3 +126,9 @@ Step 1: train the VAE by running:
 “For deterministic GPU runs with torch.use_deterministic_algorithms(True) on CUDA ≥ 10.2, set CUBLAS_WORKSPACE_CONFIG=:4096:8 (or :16:8).”
 
 Step 2:
+
+
+
+
+*****To plot Figure 1 of the manuscript:
+Run the jupyter notebook file Plot_figure1.ipynb.
