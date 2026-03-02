@@ -1,0 +1,63 @@
+{
+  "batch_size": 512,
+  "beta": 0.0003,
+  "center_weight": 5.0,
+  "clean_fix": {
+    "adapt_loss_no_kl": true,
+    "decoder_only": true,
+    "eval_reports_kl": true,
+    "fixed_test_per_subject": true,
+    "nested_train_across_k": true,
+    "z_is_mu": true
+  },
+  "downsample_factor": 30,
+  "epochs_max": 3.0,
+  "eval_epochs": [
+    0.0,
+    0.1,
+    0.2,
+    0.5,
+    1.0,
+    2.0,
+    3.0
+  ],
+  "huber_delta": 1.0,
+  "k_requested": 500,
+  "k_used": 500,
+  "lr": 0.001,
+  "metrics_by_epoch": {
+    "0": {
+      "kl": 24.09685385131836,
+      "loss": 0.14492609310150145,
+      "recon": 0.13769703876972197
+    },
+    "1": {
+      "kl": 24.09685385131836,
+      "loss": 0.1446598595380783,
+      "recon": 0.13743080520629883
+    },
+    "2": {
+      "kl": 24.09685385131836,
+      "loss": 0.14419860231876375,
+      "recon": 0.13696954798698424
+    },
+    "3": {
+      "kl": 24.09685385131836,
+      "loss": 0.14408810830116273,
+      "recon": 0.13685905396938325
+    }
+  },
+  "n_test": 2000,
+  "n_train": 500,
+  "pretrained_ckpt": "checkpoints_vae_261028001/vae_universal_subjectsplit70_10_29_win9_hd512_ld8_beta3e-04_split123_sample123_torch123.pth",
+  "runs": "3-14",
+  "sample_seed": 999,
+  "steps_per_epoch": 1,
+  "stride_points": 1,
+  "subject": "S033",
+  "subject_split_seed": 2059,
+  "test_idx_digest": "2c170687c5a2",
+  "torch_seed": 2026,
+  "train_idx_digest": "5b4a6d391f1a",
+  "window_points": 9
+}

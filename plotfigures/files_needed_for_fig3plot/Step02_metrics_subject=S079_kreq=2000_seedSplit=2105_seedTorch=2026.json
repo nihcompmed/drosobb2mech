@@ -1,0 +1,73 @@
+{
+  "batch_size": 512,
+  "beta": 0.0003,
+  "center_weight": 5.0,
+  "clean_fix": {
+    "adapt_loss_no_kl": true,
+    "decoder_only": true,
+    "eval_reports_kl": true,
+    "fixed_test_per_subject": true,
+    "nested_train_across_k": true,
+    "z_is_mu": true
+  },
+  "downsample_factor": 30,
+  "epochs_max": 3.0,
+  "eval_epochs": [
+    0.0,
+    0.1,
+    0.2,
+    0.5,
+    1.0,
+    2.0,
+    3.0
+  ],
+  "huber_delta": 1.0,
+  "k_requested": 2000,
+  "k_used": 2000,
+  "lr": 0.001,
+  "metrics_by_epoch": {
+    "0": {
+      "kl": 23.471611267089845,
+      "loss": 0.12247747159004212,
+      "recon": 0.11543598729372025
+    },
+    "0.2": {
+      "kl": 23.471611267089845,
+      "loss": 0.12174116659164429,
+      "recon": 0.11469968229532242
+    },
+    "0.5": {
+      "kl": 23.471611267089845,
+      "loss": 0.12077308297157288,
+      "recon": 0.1137316004037857
+    },
+    "1": {
+      "kl": 23.471611267089845,
+      "loss": 0.11960872054100037,
+      "recon": 0.1125672362446785
+    },
+    "2": {
+      "kl": 23.471611267089845,
+      "loss": 0.1176703256368637,
+      "recon": 0.11062884134054184
+    },
+    "3": {
+      "kl": 23.471611267089845,
+      "loss": 0.11603630876541138,
+      "recon": 0.10899482619762421
+    }
+  },
+  "n_test": 2000,
+  "n_train": 2000,
+  "pretrained_ckpt": "checkpoints_vae_261028001/vae_universal_subjectsplit70_10_29_win9_hd512_ld8_beta3e-04_split123_sample123_torch123.pth",
+  "runs": "3-14",
+  "sample_seed": 999,
+  "steps_per_epoch": 4,
+  "stride_points": 1,
+  "subject": "S079",
+  "subject_split_seed": 2105,
+  "test_idx_digest": "0b22c7dc667a",
+  "torch_seed": 2026,
+  "train_idx_digest": "1c0960d233f7",
+  "window_points": 9
+}
