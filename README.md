@@ -96,6 +96,10 @@ python PlotFigure3_adaptation.py \
    --indir files_needed_for_fig3plot \
    --epoch-pick 3
 
+Figure 4:
+Run this :
+python eegmi251213021_universal_latentODE_finalfigs_NPJSBA_Fig4.py   --data-dir EEGMI_numpy   --subject S033   --run 1   --run-ctrl 1   --ckpt-vae vae_universal30_win9_hd512_ld8_beta3e-04_251210003eegmiVAE_universal.pth   --ckpt-ode latentODE_universal_ctrl7_h9_endw_gain2_251213017.pt   --out-dir figures_uploadgithub  --start 2000   --num-windows 90   --t-end 9.0   --rollout-stride 1   --max-rollouts 36
+
 Figure 5 and S4 and S5:
 just run the jupyter notebook file:
 Plot_Figure5_S4_S5_newest.ipynb
