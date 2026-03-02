@@ -96,6 +96,10 @@ python PlotFigure3_adaptation.py \
    --indir files_needed_for_fig3plot \
    --epoch-pick 3
 
-Figure 4:
+Figure 5 and S4 and S5:
+just run the jupyter notebook file:
+Plot_Figure5_S4_S5_newest.ipynb
+
+
 
 
