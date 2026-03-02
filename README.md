@@ -88,5 +88,14 @@ For figure 2 of comparing prediction MSE between our trained black-box dynamics 
 For other codes on air quality,
 See 'AQ251201004_dropNMHC_nocontrol.ipynb'
 
+**********  How to plot all figures in the main text:
+
+Figure 3: 
+just run in the plotfigures folder:
+python PlotFigure3_adaptation.py \
+   --indir files_needed_for_fig3plot \
+   --epoch-pick 3
+
+Figure 4:
 
 
