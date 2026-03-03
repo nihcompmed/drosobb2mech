@@ -98,7 +98,8 @@ python PlotFigure3_adaptation.py \
 
 Figure 4:
 Run this :
-python eegmi251213021_universal_latentODE_finalfigs_NPJSBA_Fig4.py   --data-dir EEGMI_numpy   --subject S033   --run 1   --run-ctrl 1   --ckpt-vae networks_for_Fig4/vae_universal30_win9_hd512_ld8_beta3e-04_251210003eegmiVAE_universal.pth   --ckpt-ode networks_for_Fig4/latentODE_universal_ctrl7_h9_endw_gain2_251213017.pt   --out-dir figures_uploadgithub  --start 2000   --num-windows 90   --t-end 9.0   --rollout-stride 1   --max-rollouts 36
+
+python eegmi251213021_universal_latentODE_finalfigs_NPJSBA_Fig4_v2.py   --data-dir EEGMI_numpy   --subject S033   --run 1   --run-ctrl 1   --ckpt-vae networks_for_Fig4/vae_universal30_win9_hd512_ld8_beta3e-04_251210003eegmiVAE_universal.pth   --ckpt-ode networks_for_Fig4/latentODE_universal_ctrl7_h9_endw_gain2_251213017.pt   --out-dir figures_out  --start 2000   --num-windows 90   --t-end 9.0   --rollout-stride 1   --max-rollouts 0
 
 Figure 5 and S4 and S5:
 just run the jupyter notebook file:
